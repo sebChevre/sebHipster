@@ -62,7 +62,7 @@ public class SebHipsterApp {
      */
     public static void main(String[] args) throws UnknownHostException {
         SpringApplication app = new SpringApplication(SebHipsterApp.class);
-        DefaultProfileUtil.addDefaultProfile(app);
+        //DefaultProfileUtil.addDefaultProfile(app);
         Environment env = app.run(args).getEnvironment();
         String protocol = "http";
         if (env.getProperty("server.ssl.key-store") != null) {
