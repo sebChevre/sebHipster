@@ -1,0 +1,23 @@
+
+{
+    "sebHipsterApp": {
+        "testEntity" : {
+            "home": {
+                "title": "TestEntities",
+                "createLabel": "Créer un nouveau Test Entity",
+                "createOrEditLabel": "Créer ou éditer un Test Entity"
+            },
+            "created": "Un nouveau Test Entity a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Test Entity avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Test Entity avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Test Entity {{ id }} ?"
+            },
+            "detail": {
+                "title": "Test Entity"
+            },
+            "test": "Test",
+            "desc": "Desc"
+        }
+    }
+}

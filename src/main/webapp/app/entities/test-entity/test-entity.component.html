@@ -1,0 +1,60 @@
+<div>
+    <h2>
+        <span jhiTranslate="sebHipsterApp.testEntity.home.title">Test Entities</span>
+        <button class="btn btn-primary float-right jh-create-entity create-test-entity" [routerLink]="['/', { outlets: { popup: ['test-entity-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span  jhiTranslate="sebHipsterApp.testEntity.home.createLabel">
+            Create new Test Entity
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="testEntities">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="sebHipsterApp.testEntity.test">Test</span></th>
+            <th><span jhiTranslate="sebHipsterApp.testEntity.desc">Desc</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let testEntity of testEntities ;trackBy: trackId">
+                <td><a [routerLink]="['../test-entity', testEntity.id ]">{{testEntity.id}}</a></td>
+                <td>{{testEntity.test}}</td>
+                <td>{{testEntity.desc}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../test-entity', testEntity.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'test-entity/'+ testEntity.id + '/edit'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'test-entity/'+ testEntity.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
